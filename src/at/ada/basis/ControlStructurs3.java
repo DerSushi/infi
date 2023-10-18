@@ -1,4 +1,4 @@
-package at.ada.basics;
+package at.ada.basis;
 
 import java.util.Random;
 
