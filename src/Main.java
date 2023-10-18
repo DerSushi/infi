@@ -12,7 +12,6 @@ public class Main {
         // string - Zeichenkette
 
         int number = 7;
-        string_name = "Andi Wand";
     }
 
 //strg blank
