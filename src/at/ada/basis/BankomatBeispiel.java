@@ -2,13 +2,19 @@ package at.ada.basis;
 
 import java.util.Random;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 public class BankomatBeispiel {
     public static void main(String[] args) {
         float Bankgeldf = 0;
         float Eingabef = 0;
         for(int i=1; i>0; i++){
         Scanner scanner = new Scanner(System.in);
-
+                    try {
+                       Thread.sleep(2 * 1000);
+                      } catch (InterruptedException ie) {
+                        Thread.currentThread().interrupt();
+                        }
                     System.out.println("Wählen Sie einen Befehl aus:");
                     System.out.println("1. (e) für Geld einzahlen");
                     System.out.println("2. (a) für Geld abheben");
@@ -18,14 +24,18 @@ public class BankomatBeispiel {
                     switch(AuswahlC){
                 case 'e':
                     System.out.println("Wie viel Geld wollen sie einzahlen?");
-                    Eingabef = scanner.nextFloat();
-                    if (Eingabef > 0) {
-                        Bankgeldf += Eingabef;
-                        System.out.println("Einzahlung von " + Eingabef + " Euro erfolgreich. Neuer Kontostand: " + Bankgeldf + " Euro");
+                    try {
+                        Eingabef = scanner.nextFloat();
+                        if (Eingabef > 0) {
+                            Bankgeldf += Eingabef;
+                            System.out.println("Einzahlung von " + Eingabef + " Euro erfolgreich. Neuer Kontostand: " + Bankgeldf + " Euro");
+                        } else {
+                            System.out.println("Ungültiger Einzahlungsbetrag. Bitte geben Sie einen positiven Betrag ein.");
+                        }
                     }
-                    else {
-                        System.out.println("Ungültiger Einzahlungsbetrag. Bitte geben Sie einen positiven Betrag ein.");
-                    }
+                    } catch (NumberFormatException Eingabef) {
+                System.out.println("Ihre Angabe ist nicht valide.");
+            }
                     break;
                 case 'a':
                     System.out.println("Wie viel Geld wollen sie abheben?");
