@@ -4,10 +4,10 @@ import java.util.Random;
 import java.util.Scanner;
 public class BankomatBeispiel {
     public static void main(String[] args) {
+        float Bankgeldf = 0;
+        float Eingabef = 0;
         for(int i=1; i>0; i++){
         Scanner scanner = new Scanner(System.in);
-            float Bankgeldf = 0;
-            float Eingabef = 0;
 
                     System.out.println("Wählen Sie einen Befehl aus:");
                     System.out.println("1. (e) für Geld einzahlen");
@@ -20,7 +20,7 @@ public class BankomatBeispiel {
                     System.out.println("Wie viel Geld wollen sie einzahlen?");
                     Eingabef = scanner.nextFloat();
                     if (Eingabef > 0) {
-                        Bankgeldf += Bangeldf + Eingabef;
+                        Bankgeldf += Eingabef;
                         System.out.println("Einzahlung von " + Eingabef + " Euro erfolgreich. Neuer Kontostand: " + Bankgeldf + " Euro");
                     }
                     else {
@@ -29,6 +29,14 @@ public class BankomatBeispiel {
                     break;
                 case 'a':
                     System.out.println("Wie viel Geld wollen sie abheben?");
+                    Eingabef = scanner.nextFloat();
+                    if (Eingabef > 0) {
+                        Bankgeldf -= Eingabef;
+                        System.out.println("Einzahlung von " + Eingabef + " Euro erfolgreich. Neuer Kontostand: " + Bankgeldf + " Euro");
+                    }
+                    else {
+                        System.out.println("Sie können kein negatives Geld abheben!");
+                    }
                     break;
                 case 'k':
                     System.out.println("Ihr Konto beinhaltet: "+Bankgeldf+" Euro");
