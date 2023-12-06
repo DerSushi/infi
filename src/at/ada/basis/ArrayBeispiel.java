@@ -38,7 +38,7 @@ public class ArrayBeispiel {
                 System.out.println("Spieler " + aktuellerSpieler + " hat gewonnen!");
                 resetSpiel();
             } else if (istUnentschieden()) {
-                System.out.println("Unentschieden!");
+                System.out.println("Keiner hat gewonnen. Unentschieden!");
                 resetSpiel();
             } else {
                 aktuellerSpieler = (aktuellerSpieler == SPIELER_X) ? SPIELER_O : SPIELER_X;
