@@ -4,17 +4,27 @@ public class Auto {
     private int iLeistung;
     private String sFarbe;
     private int iAnzahlRaeder;
+    private int fahrzeughoehe;
 
     public Auto(int iLeistung, String sFarbe, int iAnzahlRaeder){
         this.iLeistung = iLeistung;
         this.sFarbe = sFarbe;
         this.iAnzahlRaeder = iAnzahlRaeder;
+        this.fahrzeughoehe =0;
     }
 
     public Auto() {
         this.iLeistung = 3322;
         this.sFarbe = "KA";
         this.iAnzahlRaeder = 44;
+    }
+
+    public int getFahrzeughoehe() {
+        return fahrzeughoehe;
+    }
+
+    public void setFahrzeughoehe(int fahrzeughoehe) {
+        this.fahrzeughoehe = fahrzeughoehe;
     }
 
     public int getiLeistung() {

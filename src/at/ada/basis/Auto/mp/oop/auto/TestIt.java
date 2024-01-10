@@ -8,6 +8,9 @@ public class TestIt
     public static void main(String[] args) {
         Random r = new Random();
         Auto auto = new Auto();
+
+        Garage garage = new Garage(100,"Bei Giesinger dahoam",200,10.00);
+
         System.out.println(auto.getInfoAuto());
         auto.setiLeistung(360);
         auto.setsFarbe("blau");
@@ -27,9 +30,14 @@ public class TestIt
             //dont forget array zugriff mit array start bei fucking 0!!!!
             int fa = r.nextInt(aFarben.length);
             aAutoList.add(new Auto(ps,aFarben[fa],ra));
+            int hoehe = r.nextInt(200+1-110)+110;
         }
         for(Auto a : aAutoList){
-            System.out.println(a.getInfoAuto());
+            {
+                System.out.println(a.getInfoAuto());
+                garage.addAutoGarage(a);
+                System.out.println(garage.getiParkplätze() + " stell - frei " + garage.getFreiePlaetze());
+            }
         }
     }
 }
