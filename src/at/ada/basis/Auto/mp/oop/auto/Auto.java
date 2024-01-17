@@ -6,11 +6,11 @@ public class Auto {
     private int iAnzahlRaeder;
     private int fahrzeughoehe;
 
-    public Auto(int iLeistung, String sFarbe, int iAnzahlRaeder){
+    public Auto(int iLeistung, String sFarbe, int iAnzahlRaeder, int fahrzeughoehe){
         this.iLeistung = iLeistung;
         this.sFarbe = sFarbe;
         this.iAnzahlRaeder = iAnzahlRaeder;
-        this.fahrzeughoehe =0;
+        this.fahrzeughoehe =fahrzeughoehe;
     }
 
     public Auto() {

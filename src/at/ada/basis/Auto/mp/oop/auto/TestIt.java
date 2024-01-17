@@ -17,7 +17,7 @@ public class TestIt
         auto.setiAnzahlRaeder(5);
         System.out.println(auto.getInfoAuto());
 
-        Auto auto2 = new Auto(330,"blau",8);
+        Auto auto2 = new Auto(330,"blau",8, 180);
         System.out.println(auto.getInfoAuto());
 
         ArrayList<Auto> aAutoList = new ArrayList<>();
@@ -29,15 +29,21 @@ public class TestIt
             int ra = r.nextInt(4+1-3)+3;
             //dont forget array zugriff mit array start bei fucking 0!!!!
             int fa = r.nextInt(aFarben.length);
-            aAutoList.add(new Auto(ps,aFarben[fa],ra));
             int hoehe = r.nextInt(200+1-110)+110;
+            aAutoList.add(new Auto(ps,aFarben[fa],ra,hoehe));
+
         }
         for(Auto a : aAutoList){
-            {
+
                 System.out.println(a.getInfoAuto());
                 garage.addAutoGarage(a);
                 System.out.println(garage.getiParkplätze() + " stell - frei " + garage.getFreiePlaetze());
-            }
+
         }
+        System.out.println("Alle Autos sing gemeinsam "+garage.getGesamtFahrzeughöeheUebereinander()+" hoch");
+        garage.getAutoFarbe("Giesingers Hautfarbe");
+        garage.getAutoLeistung(20,200);
+        garage.loescheAutosFarbe("rot");
+        garage.getAutoFarbe("rot");
     }
 }
