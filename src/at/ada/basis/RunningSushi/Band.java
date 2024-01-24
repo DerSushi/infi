@@ -1,5 +1,7 @@
 package at.ada.basis.RunningSushi;
 
+import java.util.ArrayList;
+
 public class Band {
         private int iSushiPlaetze;
         private String sAdresse;
@@ -57,7 +59,6 @@ public class Band {
         }
 
         public void getSushiLeckerheit(Integer leckerheitMin, Integer leckerheitMax) {
-            int ch = 0;
             if (leckerheitMin > leckerheitMax) {
                 int cu = leckerheitMax;
                 leckerheitMin = leckerheitMax;
@@ -71,13 +72,13 @@ public class Band {
             }
         }
 
-        public void addSushiToGarage(Sushi sushi) {
+        public void addSushiAufBand(Sushi sushi) {
             if (sushi.getiHoehe() > this.getiGewichtmax())
                 System.out.println("Das Sushi ist zu schwer!");
             else if (this.getFreiePlaetze() > 0) {
                 this.SushiListe.add(sushi);
             } else {
-                System.out.println("Garage voll!");
+                System.out.println("Band voll!");
             }
         }
 

@@ -17,33 +17,33 @@ public class TestIt {
         sushi.setiHoehe(15);
         System.out.println(sushi.getInfoSushi());
 
-        Sushi sushi2 = new Sushi(330, "blau", 8, 180);
-        System.out.println(auto.getInfoAuto());
+        Sushi sushi2 = new Sushi(5, "Thunfisch", 8, 8);
+        System.out.println(band.getInfoBand());
 
         ArrayList<Sushi> aSushiList = new ArrayList<>();
-        String[] aFarben = {"rot", "rot", "gemischt", "pink", "tuerkis", "gruen", "Giesingers Hautfarbe"};
+        String[] aArt = {"Lachs", "Gurke", "Avocado", "California Roll", "Thunfisch", "Lachs-Gurke", "Lachs-Avocado"};
         for (var i = 1; i <= 100; i++) {
-            //max = 500 min = 50
-            int ps = r.nextInt(500 + 1 - 50) + 50;
-            //max = 4 min = 3
-            int ra = r.nextInt(4 + 1 - 3) + 3;
-            //dont forget array zugriff mit array start bei fucking 0!!!!
-            int fa = r.nextInt(aFarben.length);
-            int hoehe = r.nextInt(200 + 1 - 110) + 110;
-            aAutoList.add(new Auto(ps, aFarben[fa], ra, hoehe));
+            //max = 11 min = 0
+            int lh = r.nextInt(11 + 1 - 0) + 0;
+            //max = 15 min = 3
+            int ra = r.nextInt(15 + 1 - 3) + 3;
+            //dont forget array zugriff mit array start bei 0!!!!
+            int ar = r.nextInt(aArt.length);
+            int hoehe = r.nextInt(20 + 1 - 2) + 2;
+            aSushiList.add(new Sushi(lh, aArt[ar], ra, hoehe));
 
         }
-        for (Auto a : aAutoList) {
+        for (Sushi a : aSushiList) {
 
-            System.out.println(a.getInfoAuto());
-            garage.addAutoGarage(a);
-            System.out.println(garage.getiParkplätze() + " stell - frei " + garage.getFreiePlaetze());
+            System.out.println(a.getInfoSushi());
+            band.addSushiBand(a);
+            System.out.println(band.getiSushiAufBand() + " stell - frei " + band.getFreiePlaetze());
 
         }
-        System.out.println("Alle Autos sing gemeinsam " + garage.getGesamtFahrzeughöeheUebereinander() + " hoch");
-        garage.getAutoFarbe("Giesingers Hautfarbe");
-        garage.getAutoLeistung(20, 200);
-        garage.loescheAutosFarbe("rot");
-        garage.getAutoFarbe("rot");
+        System.out.println("Alle Sushi sind gemeinsam " + band.getGesamtSushiGewichtUebereinander() + " Gramm schwer");
+        band.getSushiArt("Lachs");
+        band.getSushiLeckerheit(5, 10);
+        band.loescheSushiArt("Gurke");
+        band.getSushiArt("Gurke");
     }
 }

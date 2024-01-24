@@ -1,5 +1,7 @@
 package at.ada.basis.Auto.mp.oop.auto;
 
+import at.ada.basis.RunningSushi.Sushi;
+
 import java.util.ArrayList;
 
 public class Garage {
