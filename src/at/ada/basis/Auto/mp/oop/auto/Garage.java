@@ -3,27 +3,27 @@ package at.ada.basis.Auto.mp.oop.auto;
 import java.util.ArrayList;
 
 public class Garage {
-    private int iParkplätze;
+    private int iSushiPlaetze;
     private String sAdresse;
-    private int iHoehe;
-    private double dPreis;
+    private int iGewichtmax;
+    private double iKalorien;
     private int iFreiePlaetze;
-    ArrayList<Auto> autoListe;
+    ArrayList<Sushi> SushiListe;
 
-    public Garage(int iParkplätze, String sAdresse, int iHoehe, double iPreis) {
-        this.iParkplätze = iParkplätze;
+    public Garage(int iSushiPlaetze, String sAdresse, int iGewichtmax, double iKalorien) {
+        this.iSushiPlaetze = iSushiPlaetze;
         this.sAdresse = sAdresse;
-        this.iHoehe = iHoehe;
-        this.dPreis = dPreis;
-        this.autoListe = new ArrayList<Auto>();
+        this.iGewichtmax = iGewichtmax;
+        this.iKalorien = iKalorien;
+        this.SushiListe = new ArrayList<Sushi>();
     }
 
-    public int getiParkplätze() {
-        return iParkplätze;
+    public int getiSushiPlaetze() {
+        return iSushiPlaetze;
     }
 
-    public void setiParkplätze(int iParkplätze) {
-        this.iParkplätze = iParkplätze;
+    public void setiSushiPlaetze(int iSushiPlaetze) {
+        this.iSushiPlaetze = iSushiPlaetze;
     }
 
     public String getsAdresse() {
@@ -34,79 +34,80 @@ public class Garage {
         this.sAdresse = sAdresse;
     }
 
-    public int getiHoehe() {
-        return iHoehe;
+    public int getiGewichtmax() {
+        return iGewichtmax;
     }
 
-    public void setiHoehe(int iHoehe) {
-        this.iHoehe = iHoehe;
+    public void setiGewichtmax(int iGewichtmax) {
+        this.iGewichtmax = iGewichtmax;
     }
 
-    public double getdPreis() {
-        return dPreis;
+    public double getiKalorien() {
+        return iKalorien;
     }
 
-    public void setdPreis(double dPreis) {
-        this.dPreis = dPreis;
+    public void setiKalorien(double iKalorien) {
+        this.iKalorien = iKalorien;
     }
 
-    public int getiAutosInGarage() {
-        return this.autoListe.size();
+    public int getiSushiInGarage() {
+        return this.SushiListe.size();
     }
 
     public int getFreiePlaetze() {
-        return this.iParkplätze - getiAutosInGarage();
+        return this.iSushiPlaetze - getiSushiInGarage();
     }
 
-    public void getAutoLeistung(Integer leistungmin, Integer leistungmax) {
-        int ch=0;
-        if(leistungmin>leistungmax){
-            int cu=leistungmax;
-            leistungmin=leistungmax;
-            leistungmax=cu;
+    public void getSushiLeckerheit(Integer leckerheitMin, Integer leckerheitMax) {
+        int ch = 0;
+        if (leckerheitMin > leckerheitMax) {
+            int cu = leckerheitMax;
+            leckerheitMin = leckerheitMax;
+            leckerheitMax = cu;
         }
-        System.out.println("Folgende Auto mit Leistung "+leistungmin+" bis "+leistungmax+" sind in der Liste:");
-        for (Auto a : autoListe) {
-            if (a.getiLeistung()>leistungmin && a.getiLeistung()<leistungmax) {
-                System.out.println(a.getInfoAuto());
+        System.out.println("Folgende Sushi mit Leckerheit " + leckerheitMin + " bis " + leckerheitMax + " sind in der Liste:");
+        for (Sushi s : SushiListe) {
+            if (s.getiLeckerheit() > leckerheitMin && s.getiLeckerheit() < leckerheitMax) {
+                System.out.println(s.getInfoSushi());
             }
         }
     }
 
-    public void addAutoGarage(Auto auto) {
-        if (auto.getFahrzeughoehe() > this.getiHoehe())
-            System.out.println("Das Auto ist zu hoch!");
+    public void addSushiToGarage(Sushi sushi) {
+        if (sushi.getiHoehe() > this.getiGewichtmax())
+            System.out.println("Das Sushi ist zu schwer!");
         else if (this.getFreiePlaetze() > 0) {
-            this.autoListe.add(auto);
+            this.SushiListe.add(sushi);
         } else {
             System.out.println("Garage voll!");
         }
     }
-    public void getAutoFarbe(String farbe) {
-        System.out.println("Folgende Auto mit Farbe "+farbe+" sind in der Liste:");
-        for (Auto a : autoListe) {
-            if (a.getsFarbe().equals(farbe)) {
-                System.out.println(a.getInfoAuto());
+
+    public void getSushiArt(String art) {
+        System.out.println("Folgende Sushi mit Art " + art + " sind in der Liste:");
+        for (Sushi s : SushiListe) {
+            if (s.getsArt().equals(art)) {
+                System.out.println(s.getInfoSushi());
             }
         }
     }
-    public int getGesamtFahrzeughöeheUebereinander() {
+
+    public int getGesamtSushiGewichtUebereinander() {
         int wert = 0;
-        for (Auto a : autoListe) {
-            wert += a.getFahrzeughoehe();
+        for (Sushi s : SushiListe) {
+            wert += s.getiHoehe();
         }
         return wert;
     }
 
-
-    public void loescheAutosFarbe(String farbe) {
-        int counter=0;
-        //aus der Liste entfernen
-        for (int i=autoListe.size()-1;i>=0;i--){
-            if (autoListe.get(i).getsFarbe().equals(farbe)) {
-                autoListe.remove(i);
+    public void loescheSushiArt(String art) {
+        int counter = 0;
+        // aus der Liste entfernen
+        for (int i = SushiListe.size() - 1; i >= 0; i--) {
+            if (SushiListe.get(i).getsArt().equals(art)) {
+                SushiListe.remove(i);
                 counter++;
             }
         }
     }
-    }
+}
