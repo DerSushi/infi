@@ -1,5 +1,7 @@
 package at.ada.basis.RunningSushi;
 
+import at.ada.basis.RunningSushi.Sushi;
+
 import java.util.ArrayList;
 
 public class Band {
@@ -50,12 +52,12 @@ public class Band {
             this.iKalorien = iKalorien;
         }
 
-        public int getiSushiInGarage() {
+        public int getiSushiAufBand() {
             return this.SushiListe.size();
         }
 
         public int getFreiePlaetze() {
-            return this.iSushiPlaetze - getiSushiInGarage();
+            return this.iSushiPlaetze - getiSushiAufBand();
         }
 
         public void getSushiLeckerheit(Integer leckerheitMin, Integer leckerheitMax) {

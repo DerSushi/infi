@@ -1,3 +1,4 @@
+/*
 package at.ada.basis.Auto.mp.oop.auto;
 
 import java.util.ArrayList;
@@ -47,3 +48,4 @@ public class TestIt
         garage.getAutoFarbe("rot");
     }
 }
+*/

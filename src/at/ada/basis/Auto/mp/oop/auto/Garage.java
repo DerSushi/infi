@@ -1,6 +1,6 @@
+/*
 package at.ada.basis.Auto.mp.oop.auto;
 
-import at.ada.basis.RunningSushi.Sushi;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,7 @@ public class Garage {
     private int iGewichtmax;
     private double iKalorien;
     private int iFreiePlaetze;
-    ArrayList<Sushi> SushiListe;
+    ArrayList<Auto> AutoListe;
 
     public Garage(int iSushiPlaetze, String sAdresse, int iGewichtmax, double iKalorien) {
         this.iSushiPlaetze = iSushiPlaetze;
@@ -113,3 +113,4 @@ public class Garage {
         }
     }
 }
+*/
